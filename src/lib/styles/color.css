@@ -1,0 +1,59 @@
+:root {
+	/* primitive colors */
+	/* https://goodpalette.io/654ff0-6bd92b-c3c2cc */
+	--blue-100: #f7f2ff;
+	--blue-200: #dbcbff;
+	--blue-300: #b9a2fd;
+	--blue-400: #9179f9;
+	--blue-500: #654ff0;
+	--blue-600: #3429bd;
+	--blue-700: #17168b;
+	--blue-800: #0c0f59;
+	--blue-900: #050826;
+
+	--green-100: #f4fff2;
+	--green-200: #cefec2;
+	--green-300: #aafa90;
+	--green-400: #8aef5d;
+	--green-500: #6bd92b;
+	--green-600: #52ac0f;
+	--green-700: #3f8003;
+	--green-800: #2d5300;
+	--green-900: #172600;
+
+	--gray-100: #fbfafc;
+	--gray-200: #edecf0;
+	--gray-300: #dfdde4;
+	--gray-400: #d1cfd8;
+	--gray-500: #c3c2cc;
+	--gray-600: #9998a3;
+	--gray-700: #707079;
+	--gray-800: #494950;
+	--gray-900: #222326;
+
+	/* meaningful colors */
+	--color-primary: var(--blue-500);
+	--color-primary-active: var(--blue-700);
+	--color-primary-hover: var(--blue-400);
+
+	/* system color */
+	--color-success: yellow;
+	--color-error: red;
+	--color-warning: green;
+	--color-info: var(--blue-500);
+
+	/* text colors */
+	--color-text: rgba(0, 0, 0, 0.88);
+	--color-text-secondary: rgba(0, 0, 0, 0.65);
+	--color-text-tertiary: rgba(0, 0, 0, 0.45);
+	--color-text-quaternary: rgba(0, 0, 0, 0.25);
+
+	/* background colors */
+	--color-bg-layout: var(--gray-200);
+	--color-bg-elevated: var(--gray-100);
+	--color-bg-container: var(--gray-100);
+}
+
+body {
+	background-color: var(--color-bg-layout);
+}
