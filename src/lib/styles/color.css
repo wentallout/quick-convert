@@ -37,9 +37,9 @@
 	--color-primary-hover: var(--blue-400);
 
 	/* system color */
-	--color-success: yellow;
-	--color-error: red;
-	--color-warning: green;
+	--color-success: #81e052;
+	--color-error: #ed2c3c;
+	--color-warning: #f5c656;
 	--color-info: var(--blue-500);
 
 	/* text colors */

@@ -2,6 +2,8 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vitest/config';
 import Icons from 'unplugin-icons/vite';
 import { FontaineTransform } from 'fontaine';
+import browserslist from 'browserslist';
+import { browserslistToTargets } from 'lightningcss';
 
 export default defineConfig({
 	plugins: [
@@ -26,5 +28,15 @@ export default defineConfig({
 			'Cross-Origin-Opener-Policy': 'same-origin',
 			'Cross-Origin-Embedder-Policy': 'require-corp'
 		}
+	},
+	css: {
+		transformer: 'lightningcss',
+		lightningcss: {
+			targets: browserslistToTargets(browserslist('>= 0.25%'))
+		},
+		devSourcemap: true
+	},
+	build: {
+		cssMinify: 'lightningcss'
 	}
 });

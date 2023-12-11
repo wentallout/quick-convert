@@ -17,7 +17,7 @@
 		<p>Loading</p>
 	{/if}
 	{#if state === 'loaded'}
-		<UploadSimple width="40" height="40" />
+		<UploadSimple color="var(--color-primary)" width="40" height="40" />
 		<div class="drop__desc">
 			<button class="btn btn--primary">Choose Files</button>
 			<p in:fade>or drag file here to upload</p>

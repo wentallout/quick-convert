@@ -1,12 +1,16 @@
 <script lang="ts">
 	export let consoleMessage: string = '';
 	import { fade } from 'svelte/transition';
+
+	import { dev } from '$app/environment';
 </script>
 
-{#if consoleMessage !== 'Aborted()'}
-	<div in:fade class="console">
-		{consoleMessage}
-	</div>
+{#if dev}
+	{#if consoleMessage !== 'Aborted()'}
+		<div in:fade class="console">
+			{consoleMessage}
+		</div>
+	{/if}
 {/if}
 
 <style>
@@ -17,7 +21,7 @@
 		color: white;
 		font-family: monospace;
 		position: fixed;
-		bottom: 0;
+		top: 0;
 		left: 0;
 	}
 </style>

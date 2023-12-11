@@ -30,6 +30,13 @@
 
 		<ul class="footer__col">
 			<h5 class="footer__title">Contact</h5>
+
+			<li class="footer__content">
+				<a href="https://wentallout.io.vn">
+					<p>Nguyen Dang Khoa</p>
+				</a>
+			</li>
+
 			<li class="footer__content">
 				<a href="https://wentallout.io.vn">
 					<p>wentallout.io.vn</p>
@@ -41,8 +48,8 @@
 				</a>
 			</li>
 			<li class="footer__content">
-				<a href="mailto:wentallout@gmail.com">
-					<p>Email</p>
+				<a href="https://www.linkedin.com/in/wentallout/">
+					<p>LinkedIn</p>
 				</a>
 			</li>
 		</ul>
@@ -53,6 +60,7 @@
 <style>
 	footer {
 		background-color: black;
+		margin-top: var(--space-2xl);
 	}
 
 	.footer__end {

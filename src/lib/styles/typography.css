@@ -76,18 +76,6 @@ h1 {
 	font-size: var(--font-size-3xl);
 }
 
-.text-weight-s {
-	font-weight: 400;
-}
-
-.text-weight-m {
-	font-weight: 500;
-}
-
-.text-weight-l {
-	font-weight: 600;
-}
-
 h1,
 h2,
 h3 {
@@ -107,6 +95,8 @@ p {
 	max-width: var(--text-prose-max-width);
 }
 
-a {
-	text-decoration: underline;
+h1,
+h2,
+h3 {
+	margin-bottom: var(--space-xs);
 }

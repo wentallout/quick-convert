@@ -15,7 +15,6 @@
 	.ptitle {
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-xs);
 		margin-bottom: var(--space-xl);
 	}
 </style>

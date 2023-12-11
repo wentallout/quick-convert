@@ -217,35 +217,48 @@
 		</button>
 
 		{#if filesToConvert.length !== 0}
-			<ul>
-				{#each filesToConvert as file}
-					<li>{file.name}</li>
-				{/each}
-			</ul>
+			<div class="files">
+				<h2>Files to convert</h2>
+				<ul>
+					{#each filesToConvert as file}
+						<li>{file.name}</li>
+					{/each}
+				</ul>
+			</div>
 		{/if}
 	</div>
 
 	{#if showStep2}
 		<section use:accordion={showStep2}>
-			<h2>Select your output file type</h2>
-			<p class="convert__input">
-				Convert these files to
-				<input bind:value={outputFiletypeValue} type="text" />
-			</p>
+			<h2>Your output</h2>
+			<div class="convert__input">
+				<input
+					list="file-types"
+					class="input input__custom"
+					bind:value={outputFiletypeValue}
+					type="text" />
+				<datalist id="file-types">
+					{#each supportedFiletypes as type}
+						<option value={type}>{type}</option>
+					{/each}
+				</datalist>
+				<button class="btn btn--primary" on:click={handleConvert}>Convert</button>
+			</div>
 
 			<div class="type-list">
 				{#each supportedFiletypes as type}
-					<span class="btn--s btn--outline">
+					<button
+						on:click={() => {
+							outputFiletypeValue = type;
+						}}
+						class="btn btn--s btn--outline">
 						{type}
-					</span>
+					</button>
 				{/each}
 			</div>
-
-			<button class="btn btn--primary" on:click={handleConvert}>Convert</button>
 		</section>
 	{/if}
 
-	<ConverterProgressBar progress={$progress} />
 	<ConverterConsole {consoleMessage} />
 
 	{#if showStep3}
@@ -255,6 +268,7 @@
 		</section>
 	{/if}
 </div>
+<ConverterProgressBar {state} progress={$progress} {originalFilename} />
 
 <style>
 	.wrapper {
@@ -265,7 +279,7 @@
 
 	.file-and-drop {
 		--min: 15ch;
-		--gap: 1rem;
+		--gap: var(--space-l);
 
 		display: grid;
 		grid-gap: var(--gap);
@@ -297,17 +311,37 @@
 		}
 	}
 
-	.convert__input input {
-		border: 1px solid black;
-		width: fit-content;
-	}
-
 	.type-list {
 		width: 100%;
 		flex-wrap: wrap;
 		display: flex;
 		flex-direction: row;
 		justify-content: start;
-		gap: var(--space-s);
+		gap: var(--space-2xs);
+	}
+
+	.convert__input {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: var(--space-2xs);
+		margin-bottom: var(--space-l);
+	}
+
+	.input__custom {
+		text-align: center;
+		max-width: 80px;
+	}
+
+	.files {
+		display: flex;
+		flex-direction: column;
+
+		& ul {
+			display: flex;
+			flex-direction: column;
+			gap: var(--space-3xs);
+		}
 	}
 </style>
