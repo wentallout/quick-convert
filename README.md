@@ -36,3 +36,9 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## Progressive Web App
+
+Service Worker: https://kit.svelte.dev/docs/service-workers
+
+[How To Make Progressive Web Apps With Svelte](https://www.youtube.com/watch?v=_wiOcdEVgks)

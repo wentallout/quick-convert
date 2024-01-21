@@ -69,7 +69,7 @@
 	}
 
 	.footer {
-		--min: 26ch;
+		--min: 25ch;
 		--gap: var(--grid-gutter);
 
 		display: grid;

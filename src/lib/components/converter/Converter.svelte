@@ -307,7 +307,8 @@
 
 		&:disabled {
 			background: transparent;
-			border: none;
+			border: 1px solid var(--color-text-quaternary);
+			cursor: not-allowed;
 		}
 	}
 

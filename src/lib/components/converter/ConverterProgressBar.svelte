@@ -7,46 +7,46 @@
 	export let originalFilename: string;
 </script>
 
-<div class="progress-bar" class:hidden={progress === 0} class:success={progress === 100}>
-	<div class="progress" style:--progress="{progress}%">
-		<div class="progress__text">
+<div class="progress" class:hidden={progress === 0} class:success={progress === 100}>
+	<div class="progress__text">
+		{#if state === 'convert.start'}
+			<p>{originalFilename}</p>
+		{/if}
+	</div>
+	<div class="progress__bar" style:--progress="{progress}%">
+		<p class="percentage">
 			{progress.toFixed(0)}%
-			{#if state === 'convert.start'}
-				<span>Converting {originalFilename}</span>
-			{/if}
-		</div>
+		</p>
 	</div>
 </div>
 
 <style>
-	.progress-bar {
-		--progress-bar-clr: var(--color-primary);
-
+	.progress {
 		width: 100vw;
-		height: fit-content;
+		height: 24px;
 		position: fixed;
 		bottom: 0;
 		left: 0;
 		font-weight: 600;
-		background-color: transparent;
+		background-color: black;
 		color: var(--color-bg-elevated);
 		transition: all linear 0.3s;
 		overflow: hidden;
-		& .progress {
+		& .progress__bar {
 			width: var(--progress);
-			height: fit-content;
+			height: 100%;
 			position: absolute;
 			left: 0;
 			top: 0;
-			display: flex;
-			flex-direction: row;
-			flex-wrap: nowrap;
-			background: var(--progress-bar-clr);
+			background: var(--color-primary);
+			z-index: -1;
 		}
 	}
 
 	.progress__text {
+		width: 100%;
 		display: flex;
+		justify-content: center;
 		flex-direction: row;
 		flex-wrap: nowrap;
 		gap: var(--space-3xs);
@@ -57,7 +57,13 @@
 	}
 
 	.success {
-		--progress-bar-clr: yellow;
+		background: var(--color-success);
 		color: var(--color-text);
+	}
+
+	.percentage {
+		position: absolute;
+		left: 0;
+		top: 0;
 	}
 </style>
